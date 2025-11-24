@@ -1,0 +1,7 @@
+{
+  "name": "CryptoPulse 2077 полная версия в двух частях",
+  "description": "High-fidelity cyberpunk crypto margin trading simulator with Gemini AI analytics.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

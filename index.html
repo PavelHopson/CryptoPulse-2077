@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoPulse 2077</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              cyber: {
+                bg: '#05000a',
+                panel: '#0d001a',
+                cyan: '#00ffea',
+                magenta: '#ff00ff',
+                yellow: '#fcee0a',
+                dim: 'rgba(0, 255, 234, 0.1)',
+              }
+            },
+            fontFamily: {
+              orbitron: ['Orbitron', 'sans-serif'],
+              rajdhani: ['Rajdhani', 'sans-serif'],
+            },
+            boxShadow: {
+              neon: '0 0 5px theme("colors.cyber.cyan"), 0 0 10px theme("colors.cyber.cyan")',
+              neon_magenta: '0 0 5px theme("colors.cyber.magenta"), 0 0 10px theme("colors.cyber.magenta")',
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'scanline': 'scanline 8s linear infinite',
+            },
+            keyframes: {
+              scanline: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #05000a;
+        color: #e0e0e0;
+        font-family: 'Rajdhani', sans-serif;
+        overflow: hidden;
+      }
+      .cyber-border {
+        position: relative;
+        border: 1px solid #333;
+        background: rgba(13, 0, 26, 0.8);
+        backdrop-filter: blur(4px);
+      }
+      .cyber-border::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 8px; height: 8px;
+        border-top: 2px solid #00ffea;
+        border-left: 2px solid #00ffea;
+      }
+      .cyber-border::after {
+        content: '';
+        position: absolute;
+        bottom: 0; right: 0; width: 8px; height: 8px;
+        border-bottom: 2px solid #00ffea;
+        border-right: 2px solid #00ffea;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scanlines {
+        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+        background-size: 100% 4px;
+        position: fixed;
+        pointer-events: none;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: 9999;
+        opacity: 0.15;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0d001a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00ffea; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "zustand": "https://aistudiocdn.com/zustand@^5.0.8",
+    "lightweight-charts": "https://aistudiocdn.com/lightweight-charts@^5.0.9",
+    "@ducanh2912/next-pwa": "https://aistudiocdn.com/@ducanh2912/next-pwa@^10.2.9",
+    "tailwindcss": "https://aistudiocdn.com/tailwindcss@^4.1.17",
+    "tailwindcss-animate": "https://aistudiocdn.com/tailwindcss-animate@^1.0.7",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0",
+    "next": "https://aistudiocdn.com/next@^16.0.3",
+    "next/": "https://aistudiocdn.com/next@^16.0.3/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@nestjs/websockets": "https://aistudiocdn.com/@nestjs/websockets@^11.1.9",
+    "socket.io": "https://aistudiocdn.com/socket.io@^4.8.1",
+    "@nestjs/jwt": "https://aistudiocdn.com/@nestjs/jwt@^11.0.1",
+    "@nestjs/common": "https://aistudiocdn.com/@nestjs/common@^11.1.9",
+    "axios": "https://aistudiocdn.com/axios@^1.13.2",
+    "js-cookie": "https://aistudiocdn.com/js-cookie@^3.0.5",
+    "socket.io-client": "https://aistudiocdn.com/socket.io-client@^4.8.1",
+    "jwt-decode": "https://aistudiocdn.com/jwt-decode@^4.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="scanlines"></div>
+  </body>
+</html>
