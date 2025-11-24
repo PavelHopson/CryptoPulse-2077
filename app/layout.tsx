@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata, Viewport } from "next";
 import { Orbitron, Rajdhani } from "next/font/google";
 import "./globals.css";

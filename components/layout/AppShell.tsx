@@ -1,12 +1,8 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { cn } from '@/lib/utils';
 import { Zap, Activity, LayoutGrid, Settings, User } from 'lucide-react';
 
-interface AppShellProps {
-  children: React.ReactNode;
-}
-
-export const AppShell = ({ children }: AppShellProps) => {
+export const AppShell = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex h-full overflow-hidden">
       {/* Sidebar */}
